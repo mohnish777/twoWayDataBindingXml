@@ -11,6 +11,7 @@ import com.anushka.viewmodeldemo2.databinding.ActivityMainBinding
 import androidx.lifecycle.Observer
 
 class MainActivity : AppCompatActivity() {
+    val mohnish = "Mohnish"
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
     private lateinit var viewModelFactory: MainActivityViewModelFactory
@@ -22,6 +23,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainActivityViewModel::class.java)
 
         binding.mainActivityViewModel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = this // to listen to live data lifecycle in 2 way data binding.
     }
 }
